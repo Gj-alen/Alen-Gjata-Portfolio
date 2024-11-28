@@ -1,0 +1,662 @@
+@charset "UTF-8";
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ededed;
+  overflow-x: hidden;
+}
+
+.project-desk {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 62px 0 101px;
+  overflow: hidden;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 36px;
+  font-size: 24px;
+  color: #424242;
+  font-weight: 400;
+  line-height: 47px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 99999;
+}
+.navigation .hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+.navigation .nav-items {
+  display: flex;
+  gap: 20px;
+}
+.navigation .nav-items .nav-item {
+  text-decoration: none;
+  color: #999;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.navigation .nav-items .nav-item:hover {
+  color: #ff5627;
+  transform: scale(1.1);
+}
+.navigation .nav-items .nav-item-active {
+  color: #000;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 1px;
+    right: 20px;
+    z-index: 1000;
+  }
+  .hamburger::before {
+    content: "☰";
+  }
+  .menu-toggle:checked + .hamburger::before {
+    content: "×";
+    font-size: 50px;
+  }
+  .nav-items {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 120px;
+    z-index: 999;
+  }
+  .nav-items .nav-item:hover {
+    color: #ff5627;
+  }
+  .menu-toggle:checked + .hamburger + .nav-items {
+    display: flex;
+  }
+}
+.hero-section {
+  display: flex;
+  align-items: center;
+  gap: 87px;
+  margin-top: 160px;
+  margin-left: 193px;
+  margin-right: 193px;
+}
+.hero-section .hero-content {
+  max-width: 339px;
+}
+.hero-section .hero-title {
+  color: #000;
+  font-size: 47px;
+  font-weight: 500;
+  line-height: 73px;
+  margin: 0;
+}
+.hero-section .hero-subtitle {
+  color: #424242;
+  font-size: 24px;
+  line-height: 35px;
+  margin-top: 33px;
+}
+.hero-section .hero-image {
+  width: 702px;
+  border-radius: 0;
+  box-shadow: 0 6px 17px rgba(0, 0, 0, 0.25);
+}
+
+.project-info {
+  background-color: #fff;
+  margin-top: 213px;
+  padding: 46px 212px;
+}
+.project-info .info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.project-info .info-container .info-item {
+  text-align: center;
+}
+.project-info .info-container .info-title {
+  color: #000;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 73px;
+  margin: 0;
+}
+.project-info .info-container .info-content {
+  color: #424242;
+  font-size: 42px;
+  line-height: 73px;
+  margin-top: 19px;
+}
+
+.objective-section,
+.research-analysis-section,
+.wireframe-section,
+.conclusion-section {
+  margin-top: 244px;
+  max-width: 1224px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.objective-section .section-header,
+.objective-section .research-analysis-header,
+.objective-section .wireframe-header,
+.objective-section .conclusion-header,
+.research-analysis-section .section-header,
+.research-analysis-section .research-analysis-header,
+.research-analysis-section .wireframe-header,
+.research-analysis-section .conclusion-header,
+.wireframe-section .section-header,
+.wireframe-section .research-analysis-header,
+.wireframe-section .wireframe-header,
+.wireframe-section .conclusion-header,
+.conclusion-section .section-header,
+.conclusion-section .research-analysis-header,
+.conclusion-section .wireframe-header,
+.conclusion-section .conclusion-header {
+  display: flex;
+  align-items: center;
+  gap: 39px;
+}
+.objective-section .section-header .section-icon,
+.objective-section .section-header .research-analysis-icon,
+.objective-section .section-header .wireframe-icon,
+.objective-section .section-header .conclusion-icon,
+.objective-section .research-analysis-header .section-icon,
+.objective-section .research-analysis-header .research-analysis-icon,
+.objective-section .research-analysis-header .wireframe-icon,
+.objective-section .research-analysis-header .conclusion-icon,
+.objective-section .wireframe-header .section-icon,
+.objective-section .wireframe-header .research-analysis-icon,
+.objective-section .wireframe-header .wireframe-icon,
+.objective-section .wireframe-header .conclusion-icon,
+.objective-section .conclusion-header .section-icon,
+.objective-section .conclusion-header .research-analysis-icon,
+.objective-section .conclusion-header .wireframe-icon,
+.objective-section .conclusion-header .conclusion-icon,
+.research-analysis-section .section-header .section-icon,
+.research-analysis-section .section-header .research-analysis-icon,
+.research-analysis-section .section-header .wireframe-icon,
+.research-analysis-section .section-header .conclusion-icon,
+.research-analysis-section .research-analysis-header .section-icon,
+.research-analysis-section .research-analysis-header .research-analysis-icon,
+.research-analysis-section .research-analysis-header .wireframe-icon,
+.research-analysis-section .research-analysis-header .conclusion-icon,
+.research-analysis-section .wireframe-header .section-icon,
+.research-analysis-section .wireframe-header .research-analysis-icon,
+.research-analysis-section .wireframe-header .wireframe-icon,
+.research-analysis-section .wireframe-header .conclusion-icon,
+.research-analysis-section .conclusion-header .section-icon,
+.research-analysis-section .conclusion-header .research-analysis-icon,
+.research-analysis-section .conclusion-header .wireframe-icon,
+.research-analysis-section .conclusion-header .conclusion-icon,
+.wireframe-section .section-header .section-icon,
+.wireframe-section .section-header .research-analysis-icon,
+.wireframe-section .section-header .wireframe-icon,
+.wireframe-section .section-header .conclusion-icon,
+.wireframe-section .research-analysis-header .section-icon,
+.wireframe-section .research-analysis-header .research-analysis-icon,
+.wireframe-section .research-analysis-header .wireframe-icon,
+.wireframe-section .research-analysis-header .conclusion-icon,
+.wireframe-section .wireframe-header .section-icon,
+.wireframe-section .wireframe-header .research-analysis-icon,
+.wireframe-section .wireframe-header .wireframe-icon,
+.wireframe-section .wireframe-header .conclusion-icon,
+.wireframe-section .conclusion-header .section-icon,
+.wireframe-section .conclusion-header .research-analysis-icon,
+.wireframe-section .conclusion-header .wireframe-icon,
+.wireframe-section .conclusion-header .conclusion-icon,
+.conclusion-section .section-header .section-icon,
+.conclusion-section .section-header .research-analysis-icon,
+.conclusion-section .section-header .wireframe-icon,
+.conclusion-section .section-header .conclusion-icon,
+.conclusion-section .research-analysis-header .section-icon,
+.conclusion-section .research-analysis-header .research-analysis-icon,
+.conclusion-section .research-analysis-header .wireframe-icon,
+.conclusion-section .research-analysis-header .conclusion-icon,
+.conclusion-section .wireframe-header .section-icon,
+.conclusion-section .wireframe-header .research-analysis-icon,
+.conclusion-section .wireframe-header .wireframe-icon,
+.conclusion-section .wireframe-header .conclusion-icon,
+.conclusion-section .conclusion-header .section-icon,
+.conclusion-section .conclusion-header .research-analysis-icon,
+.conclusion-section .conclusion-header .wireframe-icon,
+.conclusion-section .conclusion-header .conclusion-icon {
+  width: 164px;
+  height: 3px;
+  background-color: #ff5627;
+  margin-left: -164px;
+}
+.objective-section .section-header .header-content,
+.objective-section .section-header .header-icon-container,
+.objective-section .section-header .wireframe-title-container,
+.objective-section .section-header .conclusion-title-container,
+.objective-section .research-analysis-header .header-content,
+.objective-section .research-analysis-header .header-icon-container,
+.objective-section .research-analysis-header .wireframe-title-container,
+.objective-section .research-analysis-header .conclusion-title-container,
+.objective-section .wireframe-header .header-content,
+.objective-section .wireframe-header .header-icon-container,
+.objective-section .wireframe-header .wireframe-title-container,
+.objective-section .wireframe-header .conclusion-title-container,
+.objective-section .conclusion-header .header-content,
+.objective-section .conclusion-header .header-icon-container,
+.objective-section .conclusion-header .wireframe-title-container,
+.objective-section .conclusion-header .conclusion-title-container,
+.research-analysis-section .section-header .header-content,
+.research-analysis-section .section-header .header-icon-container,
+.research-analysis-section .section-header .wireframe-title-container,
+.research-analysis-section .section-header .conclusion-title-container,
+.research-analysis-section .research-analysis-header .header-content,
+.research-analysis-section .research-analysis-header .header-icon-container,
+.research-analysis-section .research-analysis-header .wireframe-title-container,
+.research-analysis-section .research-analysis-header .conclusion-title-container,
+.research-analysis-section .wireframe-header .header-content,
+.research-analysis-section .wireframe-header .header-icon-container,
+.research-analysis-section .wireframe-header .wireframe-title-container,
+.research-analysis-section .wireframe-header .conclusion-title-container,
+.research-analysis-section .conclusion-header .header-content,
+.research-analysis-section .conclusion-header .header-icon-container,
+.research-analysis-section .conclusion-header .wireframe-title-container,
+.research-analysis-section .conclusion-header .conclusion-title-container,
+.wireframe-section .section-header .header-content,
+.wireframe-section .section-header .header-icon-container,
+.wireframe-section .section-header .wireframe-title-container,
+.wireframe-section .section-header .conclusion-title-container,
+.wireframe-section .research-analysis-header .header-content,
+.wireframe-section .research-analysis-header .header-icon-container,
+.wireframe-section .research-analysis-header .wireframe-title-container,
+.wireframe-section .research-analysis-header .conclusion-title-container,
+.wireframe-section .wireframe-header .header-content,
+.wireframe-section .wireframe-header .header-icon-container,
+.wireframe-section .wireframe-header .wireframe-title-container,
+.wireframe-section .wireframe-header .conclusion-title-container,
+.wireframe-section .conclusion-header .header-content,
+.wireframe-section .conclusion-header .header-icon-container,
+.wireframe-section .conclusion-header .wireframe-title-container,
+.wireframe-section .conclusion-header .conclusion-title-container,
+.conclusion-section .section-header .header-content,
+.conclusion-section .section-header .header-icon-container,
+.conclusion-section .section-header .wireframe-title-container,
+.conclusion-section .section-header .conclusion-title-container,
+.conclusion-section .research-analysis-header .header-content,
+.conclusion-section .research-analysis-header .header-icon-container,
+.conclusion-section .research-analysis-header .wireframe-title-container,
+.conclusion-section .research-analysis-header .conclusion-title-container,
+.conclusion-section .wireframe-header .header-content,
+.conclusion-section .wireframe-header .header-icon-container,
+.conclusion-section .wireframe-header .wireframe-title-container,
+.conclusion-section .wireframe-header .conclusion-title-container,
+.conclusion-section .conclusion-header .header-content,
+.conclusion-section .conclusion-header .header-icon-container,
+.conclusion-section .conclusion-header .wireframe-title-container,
+.conclusion-section .conclusion-header .conclusion-title-container {
+  display: flex;
+  align-items: center;
+  gap: 33px;
+}
+.objective-section .section-header .header-icon,
+.objective-section .section-header .wireframe-title-icon,
+.objective-section .section-header .conclusion-title-icon,
+.objective-section .research-analysis-header .header-icon,
+.objective-section .research-analysis-header .wireframe-title-icon,
+.objective-section .research-analysis-header .conclusion-title-icon,
+.objective-section .wireframe-header .header-icon,
+.objective-section .wireframe-header .wireframe-title-icon,
+.objective-section .wireframe-header .conclusion-title-icon,
+.objective-section .conclusion-header .header-icon,
+.objective-section .conclusion-header .wireframe-title-icon,
+.objective-section .conclusion-header .conclusion-title-icon,
+.research-analysis-section .section-header .header-icon,
+.research-analysis-section .section-header .wireframe-title-icon,
+.research-analysis-section .section-header .conclusion-title-icon,
+.research-analysis-section .research-analysis-header .header-icon,
+.research-analysis-section .research-analysis-header .wireframe-title-icon,
+.research-analysis-section .research-analysis-header .conclusion-title-icon,
+.research-analysis-section .wireframe-header .header-icon,
+.research-analysis-section .wireframe-header .wireframe-title-icon,
+.research-analysis-section .wireframe-header .conclusion-title-icon,
+.research-analysis-section .conclusion-header .header-icon,
+.research-analysis-section .conclusion-header .wireframe-title-icon,
+.research-analysis-section .conclusion-header .conclusion-title-icon,
+.wireframe-section .section-header .header-icon,
+.wireframe-section .section-header .wireframe-title-icon,
+.wireframe-section .section-header .conclusion-title-icon,
+.wireframe-section .research-analysis-header .header-icon,
+.wireframe-section .research-analysis-header .wireframe-title-icon,
+.wireframe-section .research-analysis-header .conclusion-title-icon,
+.wireframe-section .wireframe-header .header-icon,
+.wireframe-section .wireframe-header .wireframe-title-icon,
+.wireframe-section .wireframe-header .conclusion-title-icon,
+.wireframe-section .conclusion-header .header-icon,
+.wireframe-section .conclusion-header .wireframe-title-icon,
+.wireframe-section .conclusion-header .conclusion-title-icon,
+.conclusion-section .section-header .header-icon,
+.conclusion-section .section-header .wireframe-title-icon,
+.conclusion-section .section-header .conclusion-title-icon,
+.conclusion-section .research-analysis-header .header-icon,
+.conclusion-section .research-analysis-header .wireframe-title-icon,
+.conclusion-section .research-analysis-header .conclusion-title-icon,
+.conclusion-section .wireframe-header .header-icon,
+.conclusion-section .wireframe-header .wireframe-title-icon,
+.conclusion-section .wireframe-header .conclusion-title-icon,
+.conclusion-section .conclusion-header .header-icon,
+.conclusion-section .conclusion-header .wireframe-title-icon,
+.conclusion-section .conclusion-header .conclusion-title-icon {
+  width: 52px;
+  fill: #ff5627;
+}
+.objective-section .section-header .header-title,
+.objective-section .section-header .wireframe-title,
+.objective-section .section-header .conclusion-title,
+.objective-section .research-analysis-header .header-title,
+.objective-section .research-analysis-header .wireframe-title,
+.objective-section .research-analysis-header .conclusion-title,
+.objective-section .wireframe-header .header-title,
+.objective-section .wireframe-header .wireframe-title,
+.objective-section .wireframe-header .conclusion-title,
+.objective-section .conclusion-header .header-title,
+.objective-section .conclusion-header .wireframe-title,
+.objective-section .conclusion-header .conclusion-title,
+.research-analysis-section .section-header .header-title,
+.research-analysis-section .section-header .wireframe-title,
+.research-analysis-section .section-header .conclusion-title,
+.research-analysis-section .research-analysis-header .header-title,
+.research-analysis-section .research-analysis-header .wireframe-title,
+.research-analysis-section .research-analysis-header .conclusion-title,
+.research-analysis-section .wireframe-header .header-title,
+.research-analysis-section .wireframe-header .wireframe-title,
+.research-analysis-section .wireframe-header .conclusion-title,
+.research-analysis-section .conclusion-header .header-title,
+.research-analysis-section .conclusion-header .wireframe-title,
+.research-analysis-section .conclusion-header .conclusion-title,
+.wireframe-section .section-header .header-title,
+.wireframe-section .section-header .wireframe-title,
+.wireframe-section .section-header .conclusion-title,
+.wireframe-section .research-analysis-header .header-title,
+.wireframe-section .research-analysis-header .wireframe-title,
+.wireframe-section .research-analysis-header .conclusion-title,
+.wireframe-section .wireframe-header .header-title,
+.wireframe-section .wireframe-header .wireframe-title,
+.wireframe-section .wireframe-header .conclusion-title,
+.wireframe-section .conclusion-header .header-title,
+.wireframe-section .conclusion-header .wireframe-title,
+.wireframe-section .conclusion-header .conclusion-title,
+.conclusion-section .section-header .header-title,
+.conclusion-section .section-header .wireframe-title,
+.conclusion-section .section-header .conclusion-title,
+.conclusion-section .research-analysis-header .header-title,
+.conclusion-section .research-analysis-header .wireframe-title,
+.conclusion-section .research-analysis-header .conclusion-title,
+.conclusion-section .wireframe-header .header-title,
+.conclusion-section .wireframe-header .wireframe-title,
+.conclusion-section .wireframe-header .conclusion-title,
+.conclusion-section .conclusion-header .header-title,
+.conclusion-section .conclusion-header .wireframe-title,
+.conclusion-section .conclusion-header .conclusion-title {
+  color: #000;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 73px;
+  margin: 0;
+}
+.objective-section .section-header .section-content,
+.objective-section .section-header .research-analysis-text,
+.objective-section .section-header .wireframe-description-text,
+.objective-section .section-header .conclusion-content,
+.objective-section .research-analysis-header .section-content,
+.objective-section .research-analysis-header .research-analysis-text,
+.objective-section .research-analysis-header .wireframe-description-text,
+.objective-section .research-analysis-header .conclusion-content,
+.objective-section .wireframe-header .section-content,
+.objective-section .wireframe-header .research-analysis-text,
+.objective-section .wireframe-header .wireframe-description-text,
+.objective-section .wireframe-header .conclusion-content,
+.objective-section .conclusion-header .section-content,
+.objective-section .conclusion-header .research-analysis-text,
+.objective-section .conclusion-header .wireframe-description-text,
+.objective-section .conclusion-header .conclusion-content,
+.research-analysis-section .section-header .section-content,
+.research-analysis-section .section-header .research-analysis-text,
+.research-analysis-section .section-header .wireframe-description-text,
+.research-analysis-section .section-header .conclusion-content,
+.research-analysis-section .research-analysis-header .section-content,
+.research-analysis-section .research-analysis-header .research-analysis-text,
+.research-analysis-section .research-analysis-header .wireframe-description-text,
+.research-analysis-section .research-analysis-header .conclusion-content,
+.research-analysis-section .wireframe-header .section-content,
+.research-analysis-section .wireframe-header .research-analysis-text,
+.research-analysis-section .wireframe-header .wireframe-description-text,
+.research-analysis-section .wireframe-header .conclusion-content,
+.research-analysis-section .conclusion-header .section-content,
+.research-analysis-section .conclusion-header .research-analysis-text,
+.research-analysis-section .conclusion-header .wireframe-description-text,
+.research-analysis-section .conclusion-header .conclusion-content,
+.wireframe-section .section-header .section-content,
+.wireframe-section .section-header .research-analysis-text,
+.wireframe-section .section-header .wireframe-description-text,
+.wireframe-section .section-header .conclusion-content,
+.wireframe-section .research-analysis-header .section-content,
+.wireframe-section .research-analysis-header .research-analysis-text,
+.wireframe-section .research-analysis-header .wireframe-description-text,
+.wireframe-section .research-analysis-header .conclusion-content,
+.wireframe-section .wireframe-header .section-content,
+.wireframe-section .wireframe-header .research-analysis-text,
+.wireframe-section .wireframe-header .wireframe-description-text,
+.wireframe-section .wireframe-header .conclusion-content,
+.wireframe-section .conclusion-header .section-content,
+.wireframe-section .conclusion-header .research-analysis-text,
+.wireframe-section .conclusion-header .wireframe-description-text,
+.wireframe-section .conclusion-header .conclusion-content,
+.conclusion-section .section-header .section-content,
+.conclusion-section .section-header .research-analysis-text,
+.conclusion-section .section-header .wireframe-description-text,
+.conclusion-section .section-header .conclusion-content,
+.conclusion-section .research-analysis-header .section-content,
+.conclusion-section .research-analysis-header .research-analysis-text,
+.conclusion-section .research-analysis-header .wireframe-description-text,
+.conclusion-section .research-analysis-header .conclusion-content,
+.conclusion-section .wireframe-header .section-content,
+.conclusion-section .wireframe-header .research-analysis-text,
+.conclusion-section .wireframe-header .wireframe-description-text,
+.conclusion-section .wireframe-header .conclusion-content,
+.conclusion-section .conclusion-header .section-content,
+.conclusion-section .conclusion-header .research-analysis-text,
+.conclusion-section .conclusion-header .wireframe-description-text,
+.conclusion-section .conclusion-header .conclusion-content {
+  color: #424242;
+  font-size: 24px;
+  line-height: 35px;
+  margin-top: 33px;
+}
+
+.research-user-title,
+.site-analysis-title,
+.navigation-menu-title,
+.homepage-title,
+.signup-title,
+.search-ride-title,
+.faq-title,
+.account-title {
+  color: #000;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 73px;
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+
+.research-user-content,
+.site-analysis-content,
+.navigation-menu-changes,
+.homepage-changes,
+.signup-description,
+.search-ride-description,
+.faq-changes,
+.account-description {
+  color: #424242;
+  font-size: 24px;
+  line-height: 35px;
+  margin-top: 14px;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-top: 10px;
+  padding-left: 0;
+}
+
+li {
+  color: #424242;
+  font-size: 24px;
+  line-height: 35px;
+}
+
+strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.navigation-menu-image,
+.homepage-screen,
+.signup-image,
+.search-ride-image,
+.faq-image,
+.account-image {
+  background-color: rgba(224, 224, 224, 0.93);
+  border-radius: 11px;
+  margin-top: 80px;
+  padding: 29px 23px;
+}
+
+.nav-desktop,
+.nav-smartphone {
+  margin-bottom: 23px;
+}
+
+.nav-desktop-label,
+.nav-smartphone-label {
+  color: #000;
+  font-size: 18px;
+  line-height: 35px;
+  margin-bottom: 10px;
+}
+
+.nav-desktop-image,
+.nav-smartphone-image,
+.homepage-desktop-image,
+.homepage-mobile-image,
+.signup-screenshot,
+.search-ride-screenshot,
+.faq-screenshot,
+.account-screenshot {
+  box-shadow: 0 7px 12px rgba(0, 0, 0, 0.25);
+  max-width: 100%;
+}
+
+.cta-section {
+  margin-top: 280px;
+  text-align: center;
+}
+.cta-section .cta-text {
+  color: #424242;
+  font-size: 31px;
+  line-height: 37px;
+}
+.cta-section .cta-button {
+  background-color: #ff5627;
+  border: none;
+  border-radius: 24px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  margin-top: 40px;
+  padding: 15px 50px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.cta-section .cta-button:hover {
+  transform: scale(1.1);
+  background-color: #f33500;
+}
+
+@media (max-width: 768px) {
+  .project-desk {
+    padding: 20px;
+  }
+  .hero-section {
+    flex-direction: column;
+    margin-top: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 0 15px;
+  }
+  .hero-image,
+  .project-info,
+  .objective-section,
+  .research-analysis-section,
+  .wireframe-section,
+  .conclusion-section {
+    max-width: 100%;
+  }
+  .project-info {
+    margin-top: 40px;
+    padding: 20px;
+  }
+  .info-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .cta-section {
+    margin-top: 40px;
+    padding: 0 15px;
+  }
+  .cta-button {
+    padding: 10px 30px;
+  }
+  .navigation-menu-image,
+  .homepage-screen,
+  .signup-image,
+  .search-ride-image,
+  .faq-image,
+  .account-image {
+    margin-top: 40px;
+    padding: 20px;
+  }
+}/*# sourceMappingURL=Progetto.css.map */

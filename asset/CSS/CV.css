@@ -1,0 +1,276 @@
+@charset "UTF-8";
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: #ededed;
+  overflow-x: hidden;
+  animation: fadeIn 1s ease forwards;
+}
+
+.cv {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 36px;
+  font-size: 24px;
+  color: #424242;
+  font-weight: 400;
+  line-height: 47px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 99999;
+}
+
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.nav-items {
+  display: flex;
+  gap: 20px;
+}
+.nav-items .nav-item {
+  text-decoration: none;
+  color: #999;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.nav-items .nav-item:hover {
+  color: #ff5627;
+  transform: scale(1.1);
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  .hamburger::before {
+    content: "☰";
+  }
+  .menu-toggle:checked + .hamburger::before {
+    content: "×";
+    font-size: 50px;
+  }
+  .nav-items {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 40px;
+    right: 0px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 120px;
+    z-index: 99999;
+  }
+  .nav-items .nav-item:hover {
+    color: #ff5627;
+  }
+  .content-wrapper {
+    position: relative;
+  }
+  .menu-toggle:checked + .hamburger + .nav-items {
+    display: flex;
+  }
+  .menu-toggle {
+    display: none;
+  }
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 41%;
+}
+
+.column-2 {
+  display: flex;
+  flex-direction: column;
+  width: 59%;
+  padding-left: 80px;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.rettangolo-arancione {
+  background-color: #ff5627;
+  display: flex;
+  min-height: 477px;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+
+.img {
+  width: 100%;
+  max-width: 428px;
+  border-radius: 50%;
+}
+
+.rettangolo-nero {
+  background-color: #000;
+  color: #fff;
+  padding: 51px 55px;
+  text-align: center;
+}
+.rettangolo-nero .stato-2 {
+  font-size: 47px;
+  line-height: 1;
+}
+.rettangolo-nero .stato-3 {
+  font-size: 24px;
+  line-height: 50px;
+  margin-top: 10px;
+}
+
+.rettangolo-grigio {
+  background-color: #343434;
+  color: #fff;
+  padding: 78px 37px;
+}
+
+.skills-2, .lingue-2 {
+  font-size: 35px;
+  font-weight: 700;
+  margin-bottom: 37px;
+}
+
+.wireframing-prototyping-design-visivo-ricerca-utente-html-css-collaborazione,
+.italiano-inglese-albanese {
+  font-size: 24px;
+  line-height: 47px;
+}
+
+.lingue {
+  margin-top: 92px;
+}
+
+.profilo, .educazione, .esperienze {
+  margin-top: 70px;
+}
+
+.profilo-2, .educazione-2, .esperienze-2 {
+  color: #000;
+  font-size: 35px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.alen-gjata-24-anni-ui-ux-designer-di-varese-appassionato-di-creare-esperienze-digitali-intuitive-e-visivamente-accattivanti-competente-in-ricerca-utente-wireframing-e-prototipazione-mi-impegno-a-unire-estetica-e-funzionalita-per-risolvere-sfide-complesse-di-design-e-migliorare-la-soddisfazione-degli-utenti {
+  color: #424242;
+  font-size: 24px;
+  line-height: 44px;
+}
+
+.laurea-in-economia-e-managment-2022, .ui-ux-design-2023-oggi {
+  color: #000;
+  font-size: 24px;
+  line-height: 44px;
+  font-weight: bold;
+}
+.laurea-in-economia-e-managment-2022 span, .ui-ux-design-2023-oggi span {
+  font-weight: normal;
+  color: #424242;
+}
+
+.durante-il-mio-percorso-di-studi-di-ui-ux-design-ho-lavorato-a-una-serie-di-progetti-user-resaerch-per-jojob-rt-wireframing-per-jojob-rt-prototipazione-per-jojob-rt {
+  color: #424242;
+  font-size: 24px;
+  line-height: 44px;
+}
+.durante-il-mio-percorso-di-studi-di-ui-ux-design-ho-lavorato-a-una-serie-di-progetti-user-resaerch-per-jojob-rt-wireframing-per-jojob-rt-prototipazione-per-jojob-rt strong {
+  color: #000;
+}
+
+.contatti {
+  background-color: #ff5627;
+  color: #fff;
+  padding: 20px 53px 40px 21px;
+  margin-top: 170px;
+  margin-right: -80px;
+  margin-bottom: -300px;
+  margin-left: -80px;
+  max-width: 100%;
+  overflow: hidden;
+}
+.contatti .contatti-3 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 48px;
+}
+.contatti .numero, .contatti .mail {
+  display: flex;
+  align-items: center;
+  font-size: 35px;
+  line-height: 1;
+  margin-bottom: 40px;
+}
+.contatti .numero .img-4, .contatti .numero .img-5, .contatti .mail .img-4, .contatti .mail .img-5 {
+  width: 28px;
+  margin-right: 11px;
+}
+.contatti ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+  .cv {
+    flex-direction: column;
+  }
+  .column, .column-2 {
+    width: 100%;
+  }
+  .column-2 {
+    padding-left: 0;
+  }
+  .contatti {
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 20px;
+    padding: 20px 30px;
+  }
+  .contatti-3 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  .numero, .mail {
+    font-size: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .img-4, .img-5 {
+    width: 24px;
+    margin-right: 10px;
+  }
+}/*# sourceMappingURL=CV.css.map */
