@@ -265,4 +265,7 @@ body, html {
     opacity: 1;
     transform: translateY(0);
   }
-}/*# sourceMappingURL=Contatto.css.map */
+.custom-button {
+    background-color: #ff5627;
+    border-color: #ff5627;
+}
