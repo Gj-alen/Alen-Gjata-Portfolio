@@ -265,8 +265,5 @@ body, html {
     opacity: 1;
     transform: translateY(0);
   }
-.btn-primary.w-100 {
-    background-color: #ff5627;
-    border-color: #ff5627;
-}
+
 
