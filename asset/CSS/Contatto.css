@@ -51,6 +51,11 @@ body, html {
   display: none;
 }
 
+.custom-button {
+    background-color: #ff5627;
+    border-color: #ff5627;
+}
+
 @media (max-width: 768px) {
   .menu-toggle {
     display: none;
@@ -265,7 +270,4 @@ body, html {
     opacity: 1;
     transform: translateY(0);
   }
-.custom-button {
-    background-color: #ff5627;
-    border-color: #ff5627;
-}
+
