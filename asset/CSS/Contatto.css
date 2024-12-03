@@ -265,8 +265,8 @@ body, html {
     opacity: 1;
     transform: translateY(0);
   }
-
-.btn.btn-primary.custom-button {
-    background-color: #ff5627 !important;
-    border-color: #ff5627 !important;
+.btn-primary.w-100 {
+    background-color: #ff5627;
+    border-color: #ff5627;
 }
+
